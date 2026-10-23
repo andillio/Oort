@@ -6,7 +6,6 @@ import sysUtils as su
 import mathUtils as mu
 import plotUtils as pu
 import types
-import baseSolver as BS
 CUPY_IMPORTED = True
 import warnings as warn 
 try:
@@ -125,7 +124,7 @@ class Solver():
 		if self.initial_drop != 0:
 			self.r_sun_save = np.load(self.dataDir + "r_sun.npy")
 		else:
-			self.r_sun_save = np.zeros((self.data_drops, 3))
+			self.r_sun_save = np.zeros((self.data_drops + 1, 3))
 		self.DataDrop(0)
 
 	def set_K(self, K = []):
